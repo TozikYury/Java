@@ -14,6 +14,9 @@ public class Main {
                 new Employers("Bob", 34, "Y"),
                 new Employers("Bil", 45, "L"),
         };
+        for (Person people : employers) {
+            System.out.println(people);
+        }
     }
 
     private static int[] outputArray(int sizeArray) {
@@ -34,5 +37,28 @@ public class Main {
                 minElement = j;
 
         System.out.println("Max element array:=" + minElement);
+    }
+
+    private static void sortEmployers(Person[] person) {
+        final Scanner scanner = new Scanner(System.in);
+        final int[] array = new int[person.length];
+        System.out.println("chooses sort employer");
+        System.out.println("Press 1 to sort by age");
+        System.out.println("Press 2 to sort by name");
+        int chooses = scanner.nextInt();
+
+        switch (chooses) {
+            case 1:
+
+                break;
+        }
+    }
+
+    private static void sortEmployersAge(Employers employers) {
+
+    }
+
+    private static void sortEmployersName(Employers employers) {
+
     }
 }

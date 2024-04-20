@@ -12,7 +12,6 @@ public class Employers extends Person {
 
     @Override
     public String toString() {
-        return super.toString() + "is work in "+getNameWork();
+        return super.toString() + " is work in " + getNameWork();
     }
-
 }

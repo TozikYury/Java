@@ -6,7 +6,7 @@ public class Person {
         return name;
     }
 
-    protected int getAge() {
+    public int getAge() {
         return age;
     }
 
