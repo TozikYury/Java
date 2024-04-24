@@ -1,8 +1,8 @@
-public class Person {
-    protected String name;
-    protected int age;
+public class Person implements Comparable {
+    public String name;
+    public int age;
 
-    protected String getName() {
+    public String getName() {
         return name;
     }
 
@@ -17,6 +17,12 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Name:" + getName() + "Age:" + getAge();
+        return "Name:" + getName() + " Age:" + getAge();
+    }
+
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }

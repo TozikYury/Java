@@ -1,5 +1,4 @@
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,13 +9,15 @@ public class Main {
         maxElementArray(array);
         System.out.println("List employers");
         final Person[] employers = {
-                new Employers("Kate", 22, ""),
-                new Employers("Bob", 34, "Y"),
-                new Employers("Bil", 45, "L"),
+                new Employers("Kate", 22, "Kola"),
+                new Employers("Alis", 76, "Pepsi"),
+                new Employers("Bil", 45, "Google"),
         };
         for (Person people : employers) {
             System.out.println(people);
         }
+        System.out.println("Sort list");
+        sortEmployers(employers);
     }
 
     private static int[] outputArray(int sizeArray) {
@@ -41,24 +42,24 @@ public class Main {
 
     private static void sortEmployers(Person[] person) {
         final Scanner scanner = new Scanner(System.in);
-        final int[] array = new int[person.length];
         System.out.println("chooses sort employer");
         System.out.println("Press 1 to sort by age");
         System.out.println("Press 2 to sort by name");
         int chooses = scanner.nextInt();
 
         switch (chooses) {
-            case 1:
-
-                break;
+            case 1 -> sortEmployersAge(person);
+            case 2 -> sortEmployersName(person);
         }
     }
 
-    private static void sortEmployersAge(Employers employers) {
-
+    private static void sortEmployersAge(Person[] employers) {
+        Arrays.sort(employers, Comparator.comparingInt(Person::getAge));
+        System.out.println(Arrays.toString(employers));
     }
 
-    private static void sortEmployersName(Employers employers) {
-
+    private static void sortEmployersName(Person[] employers) {
+        Arrays.sort(employers, Comparator.comparing(Person::getName));
+        System.out.println(Arrays.toString(employers));
     }
 }
