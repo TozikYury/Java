@@ -49,7 +49,7 @@ public class Main {
 
         switch (chooses) {
             case 1 -> sortEmployersAge(person);
-            case 2 -> sortEmployersName(person);
+
         }
     }
 
@@ -58,8 +58,4 @@ public class Main {
         System.out.println(Arrays.toString(employers));
     }
 
-    private static void sortEmployersName(Person[] employers) {
-        Arrays.sort(employers, Comparator.comparing(Person::getName));
-        System.out.println(Arrays.toString(employers));
-    }
 }
